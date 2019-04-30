@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+# module temp files
+node_auth.yaml
