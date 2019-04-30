@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: spinnaker-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: spinnaker.thewalkercloud.com
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: spin-deck
+            servicePort: 9000
+  - host: spinnaker-gate.thewalkercloud.com
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: spin-gate
+            servicePort: 8084
+    
