@@ -13,6 +13,11 @@ pipeline {
         checkout scm
       }
     }
+    stage('test ls') {
+            steps {
+                sh  'ls -l'
+            }
+        }
     stage('pull latest light terraform image') {
             steps {
                 sh  """
