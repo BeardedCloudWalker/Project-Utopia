@@ -40,7 +40,7 @@ pipeline {
             steps {
                 withAWS(credentials:'8f8055f0-fef5-47b6-915b-d34669729c37') {
                 sh  """
-                    ${TERRAFORM_CMD} plan -var "backend_state_key=${BACKEND_STATE_KEY}" -var "backend_state_bucket=${BACKEND_STATE_BUCKET}" -var "aws['account']=${AWS_ACCOUNT_NUM}" -var "key_pair=${AWS_PEM_KEY}" -out=${WORK_DIR}tfoutput.plan -input=false
+                    ${TERRAFORM_CMD} plan -var "aws['account']=${AWS_ACCOUNT_NUM}" -var "key_pair=${AWS_PEM_KEY}" -out=${WORK_DIR}tfoutput.plan -input=false
                     """
                 }
             }
