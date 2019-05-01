@@ -151,7 +151,7 @@ resource "aws_subnet" "utility_public_subnet_a" {
       map(
         "Name", "utility_public_subnet_a",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'elb-subnets'}",
+        "immutable_metadata","{\"purpose\":\"elb-subnets\"}",
       )
     }"
 }
@@ -165,7 +165,7 @@ resource "aws_subnet" "utility_public_subnet_b" {
       map(
         "Name", "utility_public_subnet_b",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'elb-subnets'}",
+        "immutable_metadata","{\"purpose\":\"elb-subnets\"}",
       )
     }"
 }
