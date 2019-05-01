@@ -5,7 +5,7 @@ pipeline {
         }
     }
   environment {
-        TERRAFORM_CMD = 'docker run --network host -w /app -v ${HOME}/.aws:/root/.aws -v ${HOME}/.ssh:/root/.ssh -v /tmp/workspace/Project-Utopia:/app hashicorp/terraform:light'
+        TERRAFORM_CMD = 'docker run --network host -w /app -v /tmp/workspace/Project-Utopia:/app hashicorp/terraform:light'
     }
   stages {
       stage('Checkout') {
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 withAWS(credentials:'8f8055f0-fef5-47b6-915b-d34669729c37') {
                 sh  """
-                    ${TERRAFORM_CMD} plan -var-file=env/west2.tfvars -out=tfoutput/
+                    ${TERRAFORM_CMD} plan -var-file=env/west2.tfvars -out=tfoutput.tf -input=false
                     """
                 }
             }
