@@ -5,7 +5,7 @@ pipeline {
         }
     }
   environment {
-        TERRAFORM_CMD = 'sudo docker run -w "/app" -v "./:/app" -e "TF_DATA_DIR=.terraform" hashicorp/terraform:light'
+        TERRAFORM_CMD = 'sudo docker run -w "/app" -e "TF_DATA_DIR=.terraform" hashicorp/terraform:light'
     }
   stages {
       stage('Checkout') {
