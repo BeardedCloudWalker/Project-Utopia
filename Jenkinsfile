@@ -45,7 +45,6 @@ pipeline {
                 }
             }
         }
-    }
     stage('apply') {
             steps {
                 withAWS(credentials:'8f8055f0-fef5-47b6-915b-d34669729c37') {
@@ -55,5 +54,5 @@ pipeline {
                 }
             }
         }
-    }
+   }
 }
