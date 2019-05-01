@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh  'ls -l'
                 sh  """
-                    ${TERRAFORM_CMD} init -backend=true -input=false
+                    ${TERRAFORM_CMD} init -backend=false -input=false
                     """
             }
         }
