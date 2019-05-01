@@ -260,10 +260,10 @@ resource "aws_launch_configuration" "eks_ingress_worker_launch_config" {
   }
 }
 resource "aws_autoscaling_group" "eks_ingress_worker_asg" {
-  desired_capacity     = 2
+  desired_capacity     = 7
   launch_configuration = "${aws_launch_configuration.eks_ingress_worker_launch_config.id}"
-  max_size             = 3
-  min_size             = 1
+  max_size             = 7
+  min_size             = 2
   name                 = "${var.stack_name}-${var.environment}-ingress-asg"
   vpc_zone_identifier  = ["${aws_subnet.master_private_subnet_a.id}, ${aws_subnet.master_private_subnet_b.id}"]
 
@@ -281,10 +281,10 @@ resource "aws_autoscaling_group" "eks_ingress_worker_asg" {
 }
 
 resource "aws_autoscaling_group" "eks_worker_asg" {
-  desired_capacity     = 4
+  desired_capacity     = 0
   launch_configuration = "${aws_launch_configuration.eks_worker_launch_config.id}"
-  max_size             = 6
-  min_size             = 1
+  max_size             = 1
+  min_size             = 0
   name                 = "${var.stack_name}-${var.environment}-asg"
   vpc_zone_identifier  = ["${aws_subnet.utility_private_subnet_a.id}", "${aws_subnet.utility_private_subnet_b.id}"]
 
