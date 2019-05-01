@@ -29,7 +29,7 @@ pipeline {
             steps {
                 withAWS(credentials:'8f8055f0-fef5-47b6-915b-d34669729c37') {
                 sh  """
-                    ${TERRAFORM_CMD} init -backend=false -input=false
+                    ${TERRAFORM_CMD} init -backend=true -input=false
                     """
                 }
             }
