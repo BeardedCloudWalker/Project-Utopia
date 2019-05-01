@@ -56,6 +56,13 @@ variable "key_pair" {
 variable "instance_size" {
   description = "AWS Instance size for worker nodes"
 }
+variable "backend_state_bucket" {
+  description = "Bucket to store state files"
+}
+variable "backend_state_key" {
+  description = "Key for state file"
+}
+
 
 
 
