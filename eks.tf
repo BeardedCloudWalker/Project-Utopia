@@ -265,7 +265,7 @@ resource "aws_autoscaling_group" "eks_ingress_worker_asg" {
   max_size             = 7
   min_size             = 2
   name                 = "${var.stack_name}-${var.environment}-ingress-asg"
-  vpc_zone_identifier  = ["${aws_subnet.master_private_subnet_a.id}, ${aws_subnet.master_private_subnet_b.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.master_private_subnet_a.id}", "${aws_subnet.master_private_subnet_b.id}"]
 
   tag {
     key                 = "Name"
