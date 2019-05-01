@@ -3,6 +3,8 @@ variable "aws" {
         region   = ""
         account  = ""
         profile  = ""
+        aws_access_key = ""
+        aws_secret_key = ""
   }
 }
 variable "master_vpc_cidr" {
