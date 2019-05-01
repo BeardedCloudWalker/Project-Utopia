@@ -27,7 +27,7 @@ pipeline {
         }
     stage('init') {
             steps {
-                sh  'ls -l'
+                sh  'pwd'
                 sh  """
                     ${TERRAFORM_CMD} init -backend=false -input=false
                     """
