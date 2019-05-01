@@ -20,6 +20,7 @@ pipeline {
         }
     stage('pull latest light terraform image') {
             steps {
+                sh  'ls -l'
                 sh  """
                     docker pull hashicorp/terraform:light
                     """
