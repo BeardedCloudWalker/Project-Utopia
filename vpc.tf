@@ -23,7 +23,7 @@ resource "aws_subnet" "master_public_subnet_a" {
       map(
         "Name", "master_public_subnet_a",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'elb-subnets'}",
+        "immutable_metadata","{\"purpose\":\"elb-subnets\"}",
       )
     }"
 }
@@ -37,7 +37,7 @@ resource "aws_subnet" "master_public_subnet_b" {
       map(
         "Name", "master_public_subnet_b",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'elb-subnets'}",
+        "immutable_metadata","{\"purpose\":\"elb-subnets\"}",
       )
     }"
 }
@@ -51,7 +51,7 @@ resource "aws_subnet" "master_private_subnet_a" {
       map(
         "Name", "master_private_subnet_a",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'ec2-subnets'}",
+        "immutable_metadata","{\"purpose\":\"ec2-subnets\"}",
       )
     }"
 }
@@ -65,7 +65,7 @@ resource "aws_subnet" "master_private_subnet_b" {
       map(
         "Name", "master_private_subnet_b",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'ec2-subnets'}",
+        "immutable_metadata","{\"purpose\":\"ec2-subnets\"}",
       )
     }"
 }
@@ -179,7 +179,7 @@ resource "aws_subnet" "utility_private_subnet_a" {
       map(
         "Name", "utility_private_subnet_b",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'ec2-subnets'}",
+        "immutable_metadata","{\"purpose\":\"ec2-subnets\"}",
       )
     }"
 }
@@ -193,7 +193,7 @@ resource "aws_subnet" "utility_private_subnet_b" {
       map(
         "Name", "utility_privatesubnet_b",
         "kubernetes.io/cluster/${var.cluster_name}", "shared",
-        "immutable_metadata","{'purpose':'ec2-subnets'}",
+        "immutable_metadata","{\"purpose\":\"ec2-subnets\"}",
       )
     }"
 }
