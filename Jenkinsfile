@@ -5,7 +5,7 @@ pipeline {
         }
     }
   environment {
-        TERRAFORM_CMD = 'docker run --network host -w /app -v `pwd`:/app hashicorp/terraform:light'
+        TERRAFORM_CMD = 'docker run --network host -w /app -v `pwd`:/app -e  TF_DATA_DIR=./terraform hashicorp/terraform:light'
     }
   stages {
       stage('Checkout') {
