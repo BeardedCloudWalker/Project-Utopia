@@ -40,7 +40,7 @@ pipeline {
             steps {
                 withAWS(credentials:'8f8055f0-fef5-47b6-915b-d34669729c37') {
                 sh  """
-                    ${TERRAFORM_CMD} plan -var "aws['aws_access_key']=${AWS_ACCESS_KEY_ID}" -var "aws['aws_secret_key']=${AWS_SECRET_ACCESS_KEY}" -var "aws['account']=${AWS_ACCOUNT_NUM}" -var "key_pair=${AWS_PEM_KEY}" -out=/tmp/${WORK_DIR}/tfoutput.plan -input=false
+                    ${TERRAFORM_CMD} plan -var "aws['aws_access_key']=${AWS_ACCESS_KEY_ID}" -var "aws['aws_secret_key']=${AWS_SECRET_ACCESS_KEY}" -var "aws['account']=${AWS_ACCOUNT_NUM}" -var "key_pair=${AWS_PEM_KEY}" -out=tfoutput.plan -input=false
                     """
                 }
             }
