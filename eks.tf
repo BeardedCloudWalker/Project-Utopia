@@ -101,7 +101,7 @@ role       = aws_iam_role.eks_cluster_node_role.name
 }
 
 resource "aws_iam_instance_profile" "eks_cluster_node_instance_profile" {
-name = "terraform-eks-cluster-irole"
+name = "terraform-eks-cluster-crole"
 path = "/"
 role = aws_iam_role.eks_cluster_node_role.name
 }
